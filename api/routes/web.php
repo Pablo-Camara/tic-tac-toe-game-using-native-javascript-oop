@@ -13,6 +13,9 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->post('/security/attempt-login', 'SecurityController@attemptLogin');
+
+
+$router->group(['middleware' => 'auth'], function () use ($router) {
+    $router->get('/player/list','PlayerController@test');
 });
