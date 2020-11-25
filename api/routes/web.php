@@ -14,6 +14,7 @@
 */
 
 $router->post('/security/attempt-login', 'SecurityController@attemptLogin');
+$router->post('/security/attempt-register', 'SecurityController@attemptRegister');
 
 
 $router->group(['middleware' => 'auth'], function () use ($router) {
